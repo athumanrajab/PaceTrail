@@ -29,6 +29,41 @@
     <title>PaceTrail</title>
   </head>
   <body>
+    <dialog class="welcome-dialog" aria-labelledby="welcome-title">
+      <div class="welcome-dialog__content">
+        <p class="welcome-dialog__eyebrow">Welcome to PaceTrail</p>
+        <h1 id="welcome-title">Your workouts, mapped.</h1>
+        <p class="welcome-dialog__intro">
+          Track your runs and rides, review your progress, and keep every
+          workout tied to a place.
+        </p>
+        <ol class="welcome-dialog__steps">
+          <li>
+            <strong>Allow location access.</strong>
+            PaceTrail uses your location to open the map near you.
+          </li>
+          <li>
+            <strong>Choose a point on the map.</strong>
+            Select running or cycling, enter your workout details, and save.
+          </li>
+          <li>
+            <strong>Manage your workout history.</strong>
+            Select a workout to find it on the map, or edit, delete, and sort
+            workouts from the list.
+          </li>
+        </ol>
+        <p class="welcome-dialog__note">
+          Your workouts are saved in this browser. Location access can be
+          changed in your browser settings at any time.
+        </p>
+        <form method="dialog">
+          <button class="welcome-dialog__button" autofocus>
+            Got it, start tracking
+          </button>
+        </form>
+      </div>
+    </dialog>
+
     <div class="sidebar">
       <img src="logo-1.png" alt="Logo" class="logo" />
       <div class="workouts__toolbar" hidden>

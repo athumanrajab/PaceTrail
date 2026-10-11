@@ -5,6 +5,7 @@ PaceTrail is an interactive workout tracking application built with HTML, CSS, a
 ## Features
 
 - Interactive map powered by Leaflet
+- First-visit welcome guide with instructions for using the app
 - Automatic location detection using the browser Geolocation API
 - Log running and cycling workouts by selecting locations on the map
 - Automatically calculate running pace and cycling speed

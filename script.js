@@ -16,6 +16,7 @@ let inputDistance = document.querySelector(".form__input--distance");
 let inputDuration = document.querySelector(".form__input--duration");
 let inputCadence = document.querySelector(".form__input--cadence");
 let inputElevation = document.querySelector(".form__input--elevation");
+const welcomeDialog = document.querySelector(".welcome-dialog");
 
 // Leaflet map state and the coordinates of the latest map click.
 let map, mapEvent;
@@ -79,8 +80,6 @@ class App {
   #formErrorTimeoutId;
 
   constructor() {
-    this.#getPosition();
-
     this.#getLocalStorage();
 
     // Bind handlers so they retain access to this instance and its private state.
@@ -104,6 +103,25 @@ class App {
     sortDirection.addEventListener("change", this.#renderWorkouts.bind(this));
     cancelButton.addEventListener("click", this.#hideForm.bind(this));
     form.addEventListener("input", this.#clearFormError.bind(this));
+    this.#showWelcome();
+  }
+
+  // Show the usage guide once, then request location after it is dismissed.
+  #showWelcome() {
+    if (localStorage.getItem("pacetrail-welcome-seen")) {
+      this.#getPosition();
+      return;
+    }
+
+    welcomeDialog.addEventListener(
+      "close",
+      () => {
+        localStorage.setItem("pacetrail-welcome-seen", "true");
+        this.#getPosition();
+      },
+      { once: true },
+    );
+    welcomeDialog.showModal();
   }
 
   // Ask the browser for the user's position before creating the map.
