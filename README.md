@@ -22,9 +22,14 @@ PaceTrail is an interactive workout tracking application built with HTML, CSS, a
 
 ```text
 PaceTrail/
-├── index.html      # Main application structure
-├── style.css       # Application styling
-└── script.js       # Workout management and map functionality
+├── index.html                  # App markup and Leaflet setup
+├── style.css                  # App styles and responsive layouts
+├── script.js                  # Map, workout, and storage behavior
+├── logo-1.png                 # PaceTrail logo
+├── favicon.png                # Browser tab icon
+├── Mapty-architecture-part-1.png
+├── Mapty-architecture-final.png
+└── Mapty-flowchart.png
 ```
 
 ## Run Locally
